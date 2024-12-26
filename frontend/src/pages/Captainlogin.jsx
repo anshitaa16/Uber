@@ -7,24 +7,25 @@ const Captainlogin = () => {
 
       const [email, setEmail] = useState('')
           const [password, setPassword] = useState('')
-          const [userData, setuserData] = useState({})
+          const [captainData, setcaptainData] = useState({})
           
      
           const submitHandler = (e) => {
                e.preventDefault()
-               setuserData({
+               setcaptainData({
                     email: email,
                     password: password
                })
-               console.log(userData)
+               console.log(captainData)
                setEmail('')
                setPassword('')
           }
 
   return (
+    <div className='flex justify-center items-center w-screen'>
      <div className='p-7 h-screen flex flex-col justify-between'>
      <div>  
-     <img className='w-16 mb-10' src={image2} alt="" />
+     <img className='w-20 mb-2' src={image2} alt="" />
       <form onSubmit={(e)=>{
            submitHandler(e)
       }}>
@@ -57,12 +58,13 @@ const Captainlogin = () => {
  
  
       </form>
-           <p className='text-center'>Join a fleet? <Link to="/signup" className='text-blue-600'>Register as a Captain</Link></p>
+           <p className='text-center'>Join a fleet? <Link to="/captain-signup" className='text-blue-600'>Register as a Captain</Link></p>
      </div>
      <div>
-      <Link to="/captain-login" className='bg-[#f3c164] flex items-center justify-center text-white font-semibold mb-5 rounded px-4 py-2 w-full text-lg placeholder:text-base'>Sign in as User</Link>
+      <Link to="/login" className='bg-[#f3c164] flex items-center justify-center text-white font-semibold mb-5 rounded px-4 py-2 w-full text-lg placeholder:text-base'>Sign in as User</Link>
      </div>
      </div>
+    </div>
      
   )
 }
